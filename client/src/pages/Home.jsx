@@ -14,7 +14,6 @@ const Home = () => {
         <Description/>
         <Testimonials/>
         <GenerateButton/>
-        
     </div>
   )
 }
