@@ -13,7 +13,7 @@ export const generateImage = async (req, res) =>{
             return res.json({success: false, message: "Invalid user or prompt"})
         }
 
-        if(user.creditBalance === 0 || userModel.creditBalance<0){
+        if(user.creditBalance === 0 || user.creditBalance<0){
             return res.json({success: false, message: "Insufficient Credit Balance", creditBalance:user.creditBalance})
         }
 
