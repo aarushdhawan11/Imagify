@@ -25,7 +25,7 @@ const BuyCredit = () => {
           if(data.success){
             loadCreditsData()
             navigate('/')
-            toast.success('Credits added successfully')
+            toast.success('Credits Added Successfully!')
           }
           
         } catch (error) {
