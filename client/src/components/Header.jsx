@@ -18,8 +18,8 @@ const textItems = [
 const TextCarousel = () => {
   return (
     <div className="overflow-hidden w-full mt-6">
-      <motion.div 
-        className="flex text-lg text-gray-700 font-semibold whitespace-nowrap"
+      <motion.div
+        className="flex text-lg text-gray-700 font-semibold whitespace-nowrap dark:text-white"
         animate={{ x: ["0%", "-100%"] }}
         transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
       >
@@ -65,7 +65,7 @@ const ImageCarousel = () => {
 };
 
 const Header = () => {
-  const { user, setShowLogin } = useContext(AppContext); 
+  const { user, setShowLogin } = useContext(AppContext);
   const navigate = useNavigate();
 
   const onClickHandler = () => {
@@ -77,16 +77,16 @@ const Header = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="flex flex-col justify-center items-center text-center my-20"
       initial={{ opacity: 0.2, y: 100 }}
-      animate={{ opacity: 1, y: 0 }} 
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <motion.div 
-        className="text-stone-500 inline-flex text-center gap-2 bg-white px-6 py-1 rounded-full border border-neutral-500"
+      <motion.div
+        className="text-stone-500 inline-flex text-center gap-2 bg-white px-6 py-1 rounded-full border border-neutral-500 dark:bg-gray-800 dark:text-white dark:border-neutral-500"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
@@ -95,50 +95,33 @@ const Header = () => {
         <img src={assets.star_icon} alt="" />
       </motion.div>
 
-      <motion.h1 
-        className='text-4xl max-w-[300px] sm:text-7xl sm:max-w-[590px] mx-auto mt-10 text-center leading-tight'
+      <motion.h1
+        className='text-4xl max-w-[300px] sm:text-7xl sm:max-w-[590px] mx-auto mt-10 text-center leading-tight dark:text-white'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 2 }}
       >
-        Turn Text to <span className='text-blue-600'>image</span>, in seconds.
+        Turn Text to <span className='text-blue-600'>image</span>, in seconds
       </motion.h1>
 
-      <motion.p 
-        className='text-center max-w-xl mx-auto mt-5'
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-      >
-        Transform text into stunning AI-generated visuals effortlessly. Just describe, generate, and create with precision. Unleash your creativity with the power of AI!
-      </motion.p>
-
-      <motion.button 
-        onClick={onClickHandler} 
-        className='sm:text-lg text-white bg-black w-auto mt-8 px-12 py-2.5 flex items-center gap-2 rounded-full'
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ default: { duration: 0.5 }, opacity: { delay: 0.8, duration: 1 } }}
+        transition={{ delay: 0.8, duration: 2 }}
+        className="w-full mt-4 sm:w-[350px] text-center mx-auto"
       >
-        Generate Images
-        <img className='h-6' src={assets.star_group} alt=""/>
-      </motion.button>
+        <button
+          onClick={onClickHandler}
+          className="px-6 py-3 bg-blue-600 text-white rounded-full w-full transition duration-200"
+        >
+          Generate Image
+        </button>
+      </motion.div>
 
       <TextCarousel />
       <ImageCarousel />
-
-      <motion.p 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className='mt-2 text-neutral-600'
-      >
-        Generated images from imagify
-      </motion.p>
     </motion.div>
   );
-}
+};
 
 export default Header;

@@ -1,7 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-    font-family: Outfit;
+
+* {
+  font-family: Outfit, sans-serif;
+}
+
+/* Dark Mode */
+body {
+  @apply transition-colors duration-300;
+}
+
+/* Light Mode (default) */
+body {
+  @apply bg-white text-gray-900;
+}
+
+/* Dark Mode Styles */
+.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+.card {
+  @apply bg-white text-gray-900 p-4 rounded-lg shadow-md transition-all duration-300;
+}
+
+.dark .card {
+  @apply bg-gray-800 text-white shadow-lg;
+}
+
+button {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none transition duration-200;
+}
+
+.dark button {
+  @apply bg-blue-500 hover:bg-blue-600;
+}
+
+/* Links */
+a {
+  @apply text-blue-500 transition duration-200;
+}
+
+.dark a {
+  @apply text-blue-300;
+}
+
+/* Links hover effect */
+a:hover {
+  @apply text-blue-600;
+}
+
+.dark a:hover {
+  @apply text-blue-400;
 }
