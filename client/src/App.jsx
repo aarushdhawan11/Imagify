@@ -9,7 +9,7 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import { AppContext } from './context/AppContext'
-
+import GoogleAuthRedirect from './pages/GoogleAuthRedirect';
 
 
 const App = () => {
@@ -27,6 +27,7 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/result' element={<Result/>}/>
         <Route path='/buy' element={<BuyCredit/>}/>
+        <Route path="/google-auth-success" element={<GoogleAuthRedirect />} />
       </Routes>
       <Footer/>
       
