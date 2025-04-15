@@ -167,6 +167,17 @@ const Login = () => {
           </div>
         )}
 
+          <div className='flex items-center justify-center gap-2 my-4'>
+            <a
+              href={"http://localhost:4000/auth/google"}
+              className='flex items-center justify-center gap-3 w-full py-2 px-4 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md transition'
+            >
+              <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className='w-5 h-5' />
+              <span className='text-sm text-gray-700 font-medium'>Sign in with Google</span>
+            </a>
+          </div>
+
+
         <div className='border px-4 py-3 flex items-center gap-3 rounded-lg mb-4'>
           <img src={assets.email_icon} alt='' className='w-5 h-5' />
           <input

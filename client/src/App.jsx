@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-import Home from './pages/Home';
-import Result from './pages/Result';
-import BuyCredit from './pages/BuyCredit';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import Login from './components/Login';
+import React, { useContext } from 'react'
+import {Routes,Route} from 'react-router-dom'
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import Home from './pages/Home'
+import Result from './pages/Result'
+import BuyCredit from './pages/BuyCredit'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import Login from './components/Login'
+import { AppContext } from './context/AppContext'
+import GoogleAuthRedirect from './pages/GoogleAuthRedirect';
 
 import { AppContext } from './context/AppContext';
 
@@ -27,9 +28,10 @@ const App = () => {
       <NavBar />
       {showLogin && <Login />}
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/result' element={<Result />} />
-        <Route path='/buy' element={<BuyCredit />} />
+        <Route path='/' element={<Home/>}/>
+        <Route path='/result' element={<Result/>}/>
+        <Route path='/buy' element={<BuyCredit/>}/>
+        <Route path="/google-auth-success" element={<GoogleAuthRedirect />} />
       </Routes>
       <Footer />
     </div>
