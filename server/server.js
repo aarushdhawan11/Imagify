@@ -20,9 +20,11 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['https://ima-gify.netlify.app'], // ✅ frontend Netlify URL
+  origin: ['https://ima-gify.netlify.app', 'http://localhost:5173'],
   credentials: true,
+  optionsSuccessStatus: 200, // For legacy browser support (like IE11)
 }));
+
 
 app.use(session({
   secret: process.env.SESSION_SECRET || 'yourSecret',
