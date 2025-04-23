@@ -26,6 +26,9 @@ const Login = () => {
     }));
   };
 
+  console.log('Backend URL:', backendUrl);
+
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     if (loading || otpLoading) return;
@@ -33,11 +36,15 @@ const Login = () => {
     try {
       setLoading(true);
 
+      console.log('API URL:', `${backendUrl}/api/user/login`);
+
       if (state === 'Login') {
         const { data } = await axios.post(`${backendUrl}/api/user/login`, {
           email: formData.email,
           password: formData.password,
         });
+        
+
 
         if (data.token) {
           setToken(data.token);
