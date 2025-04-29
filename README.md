@@ -118,7 +118,7 @@ Distributed under the MIT License. See LICENSE for more information.
 
 
 ## 📬Contact
-For any questions or feedback, feel free to reach out at **Email:** aarushdhawan25@gmail.com or **Linkedin:** [https://www.linkedin.com/in/aakash-jain-/](https://www.linkedin.com/in/aarush-dhawan-2866a8309/)
+For any questions or feedback, feel free to reach out at **Email:** aarushdhawan25@gmail.com or **Linkedin:** (https://www.linkedin.com/in/aarush-dhawan-2866a8309/)
 
 ---
 
