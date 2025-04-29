@@ -31,6 +31,7 @@ const AppContextProvider = (props) => {
   };
 
   const loadCreditsData = async () => {
+    console.log("Backend URL: ", backendUrl);
     try {
       const { data } = await axios.get(backendUrl + "/api/user/credits", {
         headers: { token },

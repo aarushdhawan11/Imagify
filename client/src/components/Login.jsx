@@ -36,10 +36,11 @@ const Login = () => {
     try {
       setLoading(true);
 
-      console.log('API URL:', `${backendUrl}/api/user/login`);
+      console.log('API URL:', `https://imagify-6xeu.onrender.com/api/user/login`);
 
       if (state === 'Login') {
-        const { data } = await axios.post(`${backendUrl}/api/user/login`, {
+        //const { data } = await axios.post(`${backendUrl}/api/user/login`, {
+          const { data } = await axios.post(`https://imagify-6xeu.onrender.com/api/user/login`, {
           email: formData.email,
           password: formData.password,
         });
@@ -168,7 +169,7 @@ const Login = () => {
         {/* Google Sign-In */}
         <div className='flex items-center justify-center gap-2 my-4'>
           <a
-            href={"http://localhost:4000/auth/google"}
+            href={`${backendUrl}/auth/google`}
             className='flex items-center justify-center gap-3 w-full py-2 px-4 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md transition'
           >
             <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className='w-5 h-5' />
